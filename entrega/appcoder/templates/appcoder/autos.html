@@ -1,0 +1,31 @@
+{% extends "appcoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+ <h1> seccion de autos </h1>
+{% endblock %}
+
+{{% block formulariosubida %}
+<h4> subir formulario</h4>
+<form action="{% url 'autos' %}" method="post"> 
+ <table>
+    {{ form.as_table }}
+ </table>
+ <p>   modelo: <input type ='text' name="modelo"> </p>
+ <p>marca: <input type ='number' name="marca"> </p>
+ <input class="btn btn-primary" type='submit' value=" guardar auto">
+ <input class="btn btn-primary" type='submit' value=" buscar autos">
+
+</form>
+{% endblock%}
+
+
+ {% block formulariobusqueda %}
+ <form action="" method="post">
+ <h4> buscar empleado  </h4>
+ <p>   modelo: <input type ='text' name="modelo"> </p>
+ <p>marca: <input type ='number' name="marca"> </p>
+ <input class="btn btn-primary" type='submit' value=" buscar empleado">
+</form>
+ {% endblock %}

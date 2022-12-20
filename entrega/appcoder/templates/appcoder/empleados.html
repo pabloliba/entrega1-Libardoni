@@ -1,0 +1,30 @@
+{% extends "appcoder/padre.html" %}
+
+{% load static %}
+{% csrf_token %}
+
+{% block titulo %}
+ <h1> seccion de empleados </h1>
+{% endblock %}
+
+{% block formulariosubida %}
+<h4> subir formulario</h4>
+<form action="{% url 'empleados' %}" method="post"> 
+ <table>
+    {{ form.as_table }}
+ </table>
+ <input class="btn btn-primary" type='submit' value=" guardar empleado">
+
+</form>
+{% endblock%}
+
+
+ {% block formulariobusqueda %}
+ <form action="" method="post">
+ <h4> buscar empleado  </h4>
+ <p>   nombre: <input type ='text' name="nombre"> </p>
+ <p>documento: <input type ='number' name="documento"> </p>
+ <input class="btn btn-primary" type='submit' value=" buscar empleado">
+</form>
+ {% endblock %}
+ 
